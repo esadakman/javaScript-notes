@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Crash Course | Selectors</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.6.3.slim.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+
+</head>
+
+<body>
+    <header>
+        <h1>jQuery Crash Course</h1>
+    </header>
+    <div id="container">
+        <h1 id="heading1">
+            Heading One
+        </h1>
+        <p id="para1">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, provident ipsa iure voluptatibus quod
+            voluptatum mollitia accusamus ut cumque quibusdam. Hic <span>error at dolorem maxime maiores</span> aut
+            reiciendis,
+            aliquid quam.
+        </p>
+        <h1 id="heading2">
+            Heading Two
+        </h1>
+        <p id="para2">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, provident ipsa iure voluptatibus quod
+            voluptatum mollitia accusamus ut cumque quibusdam. Hic <span>error at dolorem maxime maiores</span> aut
+            reiciendis,
+            aliquid quam.
+        </p>
+        <ul id="list">
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+        </ul>
+        <input type="button" value="Button 1">
+        <input type="submit" value="Button 2">
+        <input type="text">
+
+
+        <a href="http://google.com" target="_blank">Google</a>
+        <a href="http://youtube.com" target="_blank">Youtube</a>
+    </div>
+
+    <script>
+        // $('h1').hide();
+        // $('h1').eq(-1).hide();
+        // $('h1#heading1').hide();
+        // $('heading2').hide();
+        // $('p span').css({ color: 'red' })
+        $('ul#list li:first').css({ color: 'red' })
+        $('ul#list li:last').css({ color: 'green' })
+        $('ul#list li:even').css({ background: 'yellow' })
+        $('ul#list li:odd').css({ background: '#cccccc' })
+        $('ul#list li:nth-child(3n').css({ 'list-style': 'none' })
+        $(':button').hide();
+        $('[href]').css('color', 'red')
+        $('a[href="http://youtube.com"]').css({ color: 'blue' })
+        // $('*').hide()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Crash Course | Selectors</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.6.3.slim.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+
+</head>
+
+<body>
+    <header>
+        <h1>jQuery Crash Course | Dom Manipulation</h1>
+    </header>
+    <div id="container">
+        <button id="btn1">Button 1</button>
+        <p class="para1">This is a paragraph</p>
+        <p class="para2">This is another paragraph</p>
+        <div id="myDiv">
+            <input type="text" id="newItem">
+            <ul id="list">
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+                <li>List Item 4</li>
+            </ul>
+            <a href="http://google.com">Google</a>
+            <ul id="users"></ul>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // $('p.para1').css('color', 'red');
+            // $('p.para1').css({ color: 'red', background: '#ccc' });
+            // $('p.para2').addClass('myClass')
+            // $('p.para2').removeClass('myClass')
+            $('#btn1').click(function () {
+                $('p.para2').toggleClass('myClass') // ! toggleClass ile add ve remove işlemlerini aynı komutla yerine getirebiliyoruz 
+            })
+            // $('#myDiv').text('Hello World')
+            // $('#myDiv').html('<h3>Hello World</h3>') // html komutunu kullanarak parantez içine html taglerini de ekleyebiliriz 
+            // alert($('#myDiv').text())
+            // $('ul').append('<li>Append List Item</li>')
+            // $('ul').prepend('<li>Prepend List Item</li>')
+            // $('.para1').appendTo('.para2') // prependTo ve appendTo ile elementleri alıp yerini geğiştirebiliyoruz
+            // $('.para1').prependTo('.para2')
+            // $('ul').before('<h4>Hello</h4>');
+            // $('ul').after('<h4>World</h4>'); // before ve after ile belirtilen yerin öncesine veya sonrasına element ekleyebiliriz
+            // $('ul').empty() // empty ile ilgili yerin içeriğini boşaltabiliriz fakat tagimiz boş bi şekilde dökümanda kalır
+            // $('ul').detach() // detach ile ilgili elementi dökümandanda silebiliriz 
+            // $('a').attr('target', '_blank') // attr ile elementimize attribute ekleyebiliriz
+            // alert($('a').attr('href'))
+            // $('a').removeAttr('target', '_blank')  // removeAttr ile ise attribute'leri elementimizden kaldırabilirz 
+            // $('p').wrap('<h1>'); // wrap ile taglerimizi sarabiliriz 
+            // $('p').wrapAll('<h1>'); // wrapAll ise bütün tagleri tek bir element içerisinde sarar
+
+            $('#newItem').keyup(function (e) {
+                var code = e.which;
+                if (code == 13) {
+                    e.preventDefault();
+                    $('ul').eq(0).append('<li>' + e.target.value + '</li>');
+                }
+            });
+
+            var myArr = ['Brad', 'Kelley', 'Nate', 'Jose'];
+
+            // $.each(myArr, function(i, val){
+			// 	$('#users').append('<li>'+val+'</li>');
+			// });
+
+            var newArr = $('ul#list li').toArray();
+            // console.log(newArr)
+            // $.each(newArr, function (i, val) {
+            //     console.log(val.innerHTML) 
+            // })
+
+        })
+
+    </script>
+</body>
+
+</html>
