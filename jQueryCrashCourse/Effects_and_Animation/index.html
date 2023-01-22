@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Crash Course | Effects & Animate</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>jQuery Crash Course | Effects & Animate</h1>
+    </header>
+    <div id="container">
+        <button id="btnFadeOut">Fade Out</button>
+        <button id="btnFadeIn">Fade In</button>
+        <button id="btnFadeTog">Fade Toggle</button>
+
+        <hr>
+        <button id="btnSlideUp">Slide Up</button>
+        <button id="btnSlideDown">Slide Down</button>
+        <button id="btnSlideTog">Slide Toggle</button>
+        <button id="btnStop">Stop</button>
+        <hr>
+        <div id="box">
+            <h1>Hello World</h1>
+        </div>
+        <hr>
+        <button id="moveLeft">Move Left</button>
+        <button id="moveRight">Move Right</button>
+        <button id="moveAround">Move Around</button>
+
+        <div id="box2"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#btnFadeOut').click(function () {
+                $("#box").fadeOut('fast', function () {
+                    $('#btnFadeOut').text('Its Gone')
+                }); // fadeOut'un içinde parametre('fast','slow','3000') belirterek fadeOut işlemimizin hızını ayarlayabiliriz 
+            });
+            $('#btnFadeIn').click(function () {
+                $("#box").fadeIn(3000);
+            });
+            $('#btnFadeTog').click(function () {
+                $("#box").fadeToggle(1000);
+            });
+            $('#btnSlideUp').click(function () {
+                $("#box").slideUp('slow');
+            });
+            $('#btnSlideDown').click(function () {
+                $("#box").slideDown(1000);
+            });
+            $('#btnSlideTog').click(function () {
+                $("#box").slideToggle(3000);
+            });
+            $('#btnStop').click(function () {
+                $("#box").stop(); // stop sayesinde slide işlemimizi bitmeden durdurabiliriz
+            });
+            $('#moveLeft').click(function () {
+                $("#box2").animate({ // animate'in içerisine değişiklik yapmak istediğimiz propertyleri yazabiliriz
+                    left: 500,
+                    height: 200,
+                    width: 200,
+                    borderRadius: '4rem',
+                    opacity: '0.5'
+                });
+            });
+            $('#moveRight').click(function () {
+                $("#box2").animate({
+                    left: 0,
+                    height: 100,
+                    width: 100,
+                    opacity: 1
+                });
+            });
+            $('#moveAround').click(function () {
+                let box = $('#box2'); // birden fazla animation işlemi için ise aşağıda ki yöntemi izleyebiliriz
+                box.animate({
+                    left: 400
+                });
+                box.animate({
+                    top: 200
+                });
+                box.animate({
+                    top: 200,
+                    left: 0
+                });
+                box.animate({
+                    top: 0,
+                    left: 0
+                });
+
+            });
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>
