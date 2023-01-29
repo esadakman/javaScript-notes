@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark d-flex flex-column align-items-center">
+    <div class="input-area col-10 col-md-8 col-lg-6 mt-5 ">
+        <input id="input-area" type="text" class="form-control" aria-label="Small"
+            aria-describedby="inputGroup-sizing-sm" required placeholder="Type for post">
+
+        <button id="post-data" disabled class="btn btn-primary my-3">Post Data</button>
+        <button id="get-post" class="btn btn-danger my-3">Get Posts</button>
+        <button id="delete-post" class="btn btn-secondary my-3">Delete Post</button>
+    </div>
+    <div class="put-data text-white col-10 col-md-8 col-lg-6">
+        <h6>Update Form</h6>
+        <form class="d-flex flex-column align-items-center">
+            <div class="d-flex gap-3 ">
+                <div class="form-group ">
+                    <input type="text" class="form-control" id="idInput" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="titleInput" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="bodyInput" rows="1" placeholder="Body"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="userIdInput" placeholder="User ID">
+                </div>
+            </div>
+            <button id="put-post" class="btn btn-warning my-3">Update Posts</button>
+        </form>
+    </div>
+
+    <div class="output text-warning">
+        <p id="output-text"></p>
+        <ul class="list-group">
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
